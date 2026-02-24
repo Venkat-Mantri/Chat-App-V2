@@ -1,0 +1,228 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: "Segoe UI", sans-serif;
+  background: #eef1f5;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.hidden {
+  display: none;
+}
+
+/* ---------------- LOGIN ---------------- */
+
+.login-card {
+  background: white;
+  padding: 30px;
+  width: 380px;
+  border-radius: 10px;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.08);
+  text-align: center;
+}
+
+.login-card h2 {
+  margin-top: 0;
+}
+
+.login-card input {
+  width: 100%;
+  padding: 10px;
+  margin: 10px 0;
+}
+
+.login-card button {
+  width: 100%;
+  padding: 10px;
+  background: #4a69bd;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.login-card hr {
+  margin: 15px 0;
+}
+
+#room-list {
+  list-style: none;
+  padding: 0;
+  max-height: 120px;
+  overflow-y: auto;
+  margin-bottom: 10px;
+}
+
+#room-list li {
+  padding: 5px;
+  background: #f1f2f6;
+  margin-bottom: 5px;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+#room-list li:hover {
+  background: #dcdde1;
+}
+
+.error {
+  color: red;
+  font-size: 14px;
+}
+
+/* ---------------- CHAT LAYOUT ---------------- */
+
+#chat-screen {
+  width: 950px;
+  height: 600px;
+  background: white;
+  display: flex;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+}
+
+/* Sidebar */
+.sidebar {
+  width: 220px;
+  background: #2f3640;
+  color: white;
+  padding: 20px;
+}
+
+.sidebar h3 {
+  margin-top: 0;
+  margin-bottom: 15px;
+}
+
+.sidebar ul {
+  list-style: none;
+  padding: 0;
+}
+
+.sidebar li {
+  margin-bottom: 8px;
+  font-size: 14px;
+}
+
+/* Chat Section */
+.chat-section {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Header */
+.chat-header {
+  padding: 15px;
+  border-bottom: 1px solid #ddd;
+  background: #f7f9fc;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logout-btn {
+  background: #e84118;
+  color: white;
+  border: none;
+  padding: 6px 12px;
+  cursor: pointer;
+  border-radius: 4px;
+}
+
+/* Messages Area */
+.messages {
+  flex: 1;
+  padding: 20px;
+  overflow-y: auto;
+  background: #f4f6f9;
+
+  display: flex;
+  flex-direction: column;
+}
+
+/* Message Bubble */
+.message {
+  padding: 12px;
+  border-radius: 8px;
+  margin-bottom: 12px;
+  max-width: 70%;
+  background: white;
+  word-wrap: break-word;
+}
+
+.message.own {
+  align-self: flex-end;
+  background: #dff9fb;
+}
+
+/* Header inside message */
+.message-header {
+  font-size: 13px;
+  margin-bottom: 5px;
+  display: flex;
+  justify-content: space-between;
+  color: #555;
+}
+
+.message-body {
+  font-size: 14px;
+}
+
+/* Notification */
+.notification {
+  text-align: center;
+  color: #888;
+  font-size: 13px;
+  margin-bottom: 10px;
+}
+
+/* Input Area */
+.input-area {
+  display: flex;
+  padding: 15px;
+  border-top: 1px solid #ddd;
+  background: white;
+}
+
+.input-area input {
+  flex: 1;
+  padding: 10px;
+}
+
+.input-area button {
+  padding: 10px 20px;
+  background: #44bd32;
+  color: white;
+  border: none;
+  cursor: pointer;
+  margin-left: 10px;
+  border-radius: 5px;
+}
+
+/* ---------------- RESPONSIVE ---------------- */
+
+@media (max-width: 768px) {
+  #chat-screen {
+    flex-direction: column;
+    width: 95%;
+    height: 95vh;
+  }
+
+  .sidebar {
+    width: 100%;
+    text-align: center;
+  }
+
+  .message {
+    max-width: 90%;
+  }
+}
