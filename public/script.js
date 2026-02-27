@@ -1,4 +1,8 @@
-let socket = new WebSocket("ws://localhost:3000");
+let socket = new WebSocket(
+  window.location.protocol === "https:"
+    ? "wss://" + window.location.host
+    : "ws://" + window.location.host
+);
 
 let currentRoom = "";
 let currentUser = "";
